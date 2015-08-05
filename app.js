@@ -10,6 +10,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var products = require('./routes/products');
 var index = require('./routes/index');
+var cors = require('cors');
+
+app.use(cors());
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -47,4 +50,4 @@ app.use('/api', router);
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('Cors allow on port ' + port);
